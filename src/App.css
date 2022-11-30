@@ -8,6 +8,13 @@
 body {
   background-color: #000;
 }
+#cat404 img {
+  width: 60%;
+}
+#cat404 {
+  display: flex;
+  justify-content: center;
+}
 #orderComponent {
   color: aliceblue;
 }

@@ -7,6 +7,7 @@ import BackendModal2 from "./Components/BackendModal";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import TVShows from "./Components/TVShows";
 import Details from "./Components/Details";
+import NotFound from "./Components/NotFound";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route element={<BackendModal2 />} path="/order" />
           <Route element={<TVShows />} path="/tv" />
           <Route element={<Details />} path="/details/:imdbID" />
+          <Route element={<NotFound />} path="*" />
         </Routes>
         <FooterBar />
       </>
