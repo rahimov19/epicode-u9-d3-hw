@@ -1,0 +1,371 @@
+:root {
+  --home-bg-color: #000;
+  --account-bg-color: #f3f3f3;
+  --text-color: #fff;
+  --primary-color: #e40a13;
+  --secondary-color: #929292;
+}
+body {
+  background-color: #000;
+}
+#orderComponent {
+  color: aliceblue;
+}
+#orderComponent h1 {
+  margin-left: 9em;
+  margin-bottom: 1em;
+}
+.navbar-link {
+  margin-inline: 1em;
+}
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  color: aliceblue;
+  border: 2px solid aliceblue;
+}
+.leftside {
+  display: flex;
+  justify-content: center;
+}
+#mainbox {
+  margin-inline: auto;
+}
+label {
+  font-size: 1.4em;
+}
+input {
+  border: none;
+}
+select {
+  height: 3em;
+  background-color: #929292;
+  border: none;
+  color: white;
+  font-size: 1.5em;
+}
+#mainbox h1 {
+  color: aliceblue;
+}
+.leftside img {
+  object-fit: cover;
+  overflow: hidden;
+  height: 100%;
+  /* aspect-ratio: 1/1; */
+}
+.leftside {
+  height: 80vh;
+}
+.carousel-control-prev {
+  width: 8em;
+  display: flex;
+  justify-content: flex-end;
+}
+.carousel-control-next {
+  width: 8em;
+  display: flex;
+  justify-content: flex-start;
+}
+.rightside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  background: transparent;
+}
+.col-3 {
+  display: flex;
+  justify-content: flex-start;
+}
+div.col-2 {
+  display: flex;
+  justify-content: flex-end;
+}
+span.genre.col-2 {
+  display: flex;
+  justify-content: center;
+  /* margin-right: 1em; */
+  width: 13%;
+}
+footer {
+  margin-top: 10em;
+}
+.title {
+  font-size: 1.4em;
+}
+body {
+  background: var(--home-bg-color);
+}
+
+.col-md-2 {
+  position: relative;
+  height: 15em;
+}
+.btn {
+  border-radius: 0;
+}
+
+#logo {
+  height: 48px;
+}
+
+#avatar {
+  height: 36px;
+}
+#avatar-small {
+  height: 24px;
+  margin-right: 10px;
+}
+.dropdown-menu {
+  margin-left: -100px;
+  background-color: var(--home-bg-color);
+}
+#searchInput {
+  width: 30%;
+  height: 1.7em;
+  border-radius: 20px;
+  background-color: #f3f3f3;
+  color: #000;
+}
+.icon {
+  margin: 4px 10px;
+}
+
+.dropdown-menu a {
+  font-size: 12px;
+}
+
+.genre-details {
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.genre-button {
+  margin-left: 4em;
+}
+
+.movie-row {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.movie-cover {
+  width: 99%;
+  transition: 0.3s;
+  opacity: 0.7;
+}
+.movie-cover:hover {
+  /* opacity: 1; */
+  cursor: pointer;
+  /* transform: scale(1.05); */
+  animation: imagehover 0.8s ease-out;
+}
+@keyframes imagehover {
+  0% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+}
+
+.carousel-control-next {
+  margin-right: -5%;
+}
+
+.carousel-control-prev {
+  margin-left: -5%;
+}
+
+.account-page {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: var(--account-bg-color);
+}
+
+.profile-page {
+  padding: 5% 20%;
+  color: #fff;
+}
+
+.profile-title {
+  font-size: 64px;
+}
+
+.edit-icon {
+  position: relative;
+  left: 10%;
+  top: -10%;
+  background: black;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+input[type="text"] {
+  padding: 10px;
+  background: var(--secondary-color);
+  width: 100%;
+  color: white;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.5);
+  margin-bottom: 10px;
+}
+
+.infobtn {
+  position: absolute;
+  right: 10px;
+  margin: 10px;
+  border-radius: 0 10px 0 10px;
+  transition: 0.3s;
+  transform: translateY(-5em);
+  opacity: 0;
+  z-index: 2;
+  transform: scale(0.2);
+}
+
+.infobtn2 {
+  border-radius: 0 10px 0 10px;
+}
+
+/* html
+  body
+  div#root
+  div
+  div.container-fluid
+  div.movie-gallery.m-2
+  div.carousel.slide
+  div.carousel-inner
+  div.carousel-inner.active
+  div.active.carousel-item
+  div.movie-row
+  div#first_row.row */
+.spinner-border,
+.spinnerO {
+  margin-inline: auto;
+  font-size: 2em;
+}
+.spinnerO {
+  display: flex;
+  justify-content: center;
+}
+.infobtn:hover {
+  transform: scale(0.1);
+  transition: 0.3s;
+}
+.col-md-2:hover .infobtn {
+  transform: translateY(0);
+  opacity: 1;
+  transition: 0.6s;
+}
+.fadeout {
+  height: 100%;
+  background: rgb(2, 0, 40);
+  background: linear-gradient(
+    0deg,
+    rgb(25, 0, 0) 0%,
+    rgba(139, 139, 139, 0.5018207966780462) 70%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  opacity: 0;
+  transition: ease-in 0.5s;
+  color: aliceblue;
+}
+.fadeoutText {
+  /* height: 200px; */
+  width: 85%;
+  position: absolute;
+  top: 93%;
+  left: 20px;
+  color: aliceblue;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 0.5em;
+  transform: translateY(20em);
+  opacity: 0;
+}
+.col-md-2:hover .fadeoutText {
+  transform: translateY(0);
+  opacity: 1;
+  transition: 1s;
+}
+.fadeout h3 {
+  text-align: end;
+  margin-top: 6em;
+}
+.col-md-2:hover .fadeout {
+  transform: translateY(-100%);
+  opacity: 1;
+  transition: ease-in 0.8s;
+}
+button.active {
+  display: none;
+}
+div.movie-gallery:nth-child(2) > div:nth-child(2) > a:nth-child(3),
+div.movie-gallery:nth-child(2) > div:nth-child(2) > a:nth-child(4),
+div.movie-gallery:nth-child(3) > div:nth-child(2) > a:nth-child(3),
+div.movie-gallery:nth-child(3) > div:nth-child(2) > a:nth-child(4),
+div.movie-gallery:nth-child(4) > div:nth-child(2) > a:nth-child(3),
+div.movie-gallery:nth-child(4) > div:nth-child(2) > a:nth-child(4) {
+  display: none;
+}
+#navbarSupportedContent {
+  display: flex;
+  justify-content: space-between;
+}
+div.col-md-3:nth-child(1) > ul:nth-child(1) > li:nth-child(1) svg {
+  margin-inline: 0.2em;
+}
+.navbar a {
+  font-size: 1.2em;
+  color: rgba(139, 139, 139, 1) !important;
+}
+#buttondrop {
+  background-color: transparent;
+  border-color: rgba(139, 139, 139, 1);
+}
+#order {
+  background-color: transparent;
+  color: #929292;
+  border: none;
+}
+html
+  body
+  div#root
+  nav.navbar.navbar-expand-lg.navbar-light
+  div.container-fluid
+  div#navbarSupportedContent.collapse.navbar-collapse
+  ul.navbar-nav.me-auto.mb-2.mb-lg-0 {
+  display: flex;
+  align-items: center;
+}
+.detailsCard {
+  width: 40%;
+  margin-inline: auto;
+  margin-block: 2em;
+}
+.detailsCard .colCard {
+  margin-block: auto;
+}
+.list-group-flush .list-group-item {
+  color: #000;
+}
