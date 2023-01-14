@@ -8,17 +8,26 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import TVShows from "./Components/TVShows";
 import Details from "./Components/Details";
 import NotFound from "./Components/NotFound";
+import SearchPage from "./Components/SearchPage";
+import { useState } from "react";
 
 function App() {
+  const [searchValue, setSearchValue] = useState("");
+
   return (
     <BrowserRouter>
       <>
-        <Navibar />
+        <Navibar setSearchValue={setSearchValue} />
         <Routes>
           <Route element={<MainArea />} path="/" />
           <Route element={<BackendModal2 />} path="/order" />
           <Route element={<TVShows />} path="/tv" />
           <Route element={<Details />} path="/details/:imdbID" />
+          <Route
+            element={<SearchPage searchValue={searchValue} />}
+            path="/searchPage"
+          />
+
           <Route element={<NotFound />} path="*" />
         </Routes>
         <FooterBar />

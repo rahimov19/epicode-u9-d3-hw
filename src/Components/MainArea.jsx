@@ -47,9 +47,13 @@ export default class MainArea extends Component {
               </div>
             </div>
           </div>
-          <MoviesList searchPar="Matrix" title="Back to Black" />
-          <MoviesList searchPar="Rocky" title="Unbreakable Legend" />
-          <MoviesList searchPar="Terminator" title="Asta la Vista Baby" />
+          <MoviesList search="Matrix" title="Back to Black" par="movie" />
+          <MoviesList search="Rocky" title="Unbreakable Legend" par="movie" />
+          <MoviesList
+            search="Terminator"
+            title="Asta la Vista Baby"
+            par="movie"
+          />
         </Container>
       </div>
     );

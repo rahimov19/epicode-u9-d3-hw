@@ -4,9 +4,8 @@ import logo from "./netflix_logo.png";
 import ava from "./avatar.png";
 import { Link, useLocation } from "react-router-dom";
 
-export default function Navibar() {
+export default function Navibar({ setSearchValue }) {
   const location = useLocation();
-  console.log(location);
 
   return (
     <>
@@ -35,7 +34,7 @@ export default function Navibar() {
               </li>
               <li className="nav-item">
                 <Link className="navbar-link" to="/order">
-                  Request a Movie
+                  Add a movie
                 </Link>
               </li>
               <li className="nav-item">
@@ -44,16 +43,36 @@ export default function Navibar() {
                 </Link>
               </li>
             </ul>
-            <input
-              type="text"
-              id="searchInput"
-              placeholder={
-                location.pathname === "/tv"
-                  ? "Search for TV Shows"
-                  : "Search for Movies"
-              }
-            />
-
+            <div className="d-flex align-items-center">
+              <input
+                style={{
+                  paddingLeft: "0.5em",
+                  height: "2em",
+                  width: "15em",
+                }}
+                type="text"
+                id="searchInput"
+                onChange={(e) => setSearchValue(e.target.value)}
+                placeholder={
+                  location.pathname === "/tv"
+                    ? "Search for TV Shows"
+                    : "Search for Movies"
+                }
+              />
+              <Link className="navbar-link" to="/searchPage">
+                <Button
+                  style={{
+                    backgroundColor: "#DF0813",
+                    color: "aliceblue",
+                    fontSize: "1.2em",
+                    border: "none",
+                    borderRadius: "10px",
+                  }}
+                >
+                  Search
+                </Button>
+              </Link>
+            </div>
             <ul className="navbar-nav">
               <li className="nav-item">
                 <Nav.Link

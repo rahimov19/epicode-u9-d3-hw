@@ -7,9 +7,9 @@ export default class TVShows extends Component {
     return (
       <Container fluid>
         <h1 className="text-light">TV Shows</h1>
-        <MoviesList searchPar="Simpsons" title="Yellow Childhood" />
-        <MoviesList searchPar="Sherlock" title="Detective Time" />
-        <MoviesList searchPar="Lost" title="Time to find'em" />
+        <MoviesList search="Simpsons" title="Yellow Childhood" par="series" />
+        <MoviesList search="Sherlock" title="Detective Time" par="series" />
+        <MoviesList search="Lost" title="Time to find'em" par="series" />
       </Container>
     );
   }

@@ -19,7 +19,7 @@ export default function Details() {
 
   const [movie, setMovie] = useState(null);
   const navigate = useNavigate();
-
+  const apiUrl = process.env.REACT_APP_BE_URL;
   useEffect(() => {
     fetchMovies();
   }, []);
@@ -44,6 +44,25 @@ export default function Details() {
     }
   }
 
+  async function sendPDF() {
+    const options = {
+      method: "POST",
+      body: JSON.stringify(movie),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    try {
+      const endpoint = `${apiUrl}/files/savepdf`;
+      const response = await fetch(endpoint, options);
+    } catch (error) {
+      console.log(error);
+    }
+    const pdfFile = `${apiUrl}/files/pdf3`;
+    window.location.href = pdfFile;
+  }
+
   return (
     <div>
       {movie ? (
@@ -64,8 +83,15 @@ export default function Details() {
                 <ListGroupItem>Runtime {movie.Runtime}</ListGroupItem>
               </ListGroup>
               <Card.Body>
-                <Button variant="dark" onClick={() => navigate(-1)}>
+                <Button
+                  variant="dark"
+                  className="mr-2"
+                  onClick={() => navigate(-1)}
+                >
                   Back
+                </Button>
+                <Button variant="info" onClick={() => sendPDF()}>
+                  Download as PDF
                 </Button>
               </Card.Body>
             </Col>

@@ -5,22 +5,25 @@ import { Link } from "react-router-dom";
 
 export default class MoviesList extends Component {
   state = {
-    fetchedMovies: null,
+    fetchMovies: null,
   };
-
   componentDidMount() {
-    this.fetchMovies(this.props.searchPar);
+    this.fetchMovies();
   }
-  fetchMovies = async (searchPar) => {
+  fetchMovies = async () => {
+    const apiUrl = process.env.REACT_APP_BE_URL;
     try {
       let response = await fetch(
-        `http://www.omdbapi.com/?s=${searchPar}&apikey=383cbcb8`
+        `${apiUrl}/movies/?search=${this.props.search}`
       );
       if (response.ok) {
         let data = await response.json();
+        const filteredData = data.filter(
+          (movie) => movie.Type === this.props.par
+        );
         console.log(data);
         setTimeout(() => {
-          this.setState({ fetchMovies: data });
+          this.setState({ fetchMovies: filteredData });
           console.log(this.state);
         }, 1000);
       } else {
@@ -42,7 +45,7 @@ export default class MoviesList extends Component {
                 <div className="movie-row">
                   <Row className="row" id="first_row">
                     {this.state.fetchMovies ? (
-                      this.state.fetchMovies.Search.slice(0, 6).map((movie) => (
+                      this.state.fetchMovies.slice(0, 6).map((movie) => (
                         <Col md={2} key={movie.imdbID}>
                           <img
                             className="movie-cover"
@@ -65,7 +68,7 @@ export default class MoviesList extends Component {
                           <div className="fadeout"></div>
                           <div className="fadeoutText">
                             <h3>{movie.Title}</h3>{" "}
-                            <p className="imageDescription">${movie.Year}</p>
+                            <h6 className="imageDescription">{movie.Year}</h6>
                           </div>
                         </Col>
                       ))
@@ -81,7 +84,7 @@ export default class MoviesList extends Component {
                 <div className="movie-row">
                   <Row className="row" id="first_row2">
                     {this.state.fetchMovies ? (
-                      this.state.fetchMovies.Search.slice(6, 6).map((movie) => (
+                      this.state.fetchMovies.slice(6, 6).map((movie) => (
                         <Col md={2} key={movie.imdbID}>
                           <img
                             className="movie-cover"
@@ -94,7 +97,7 @@ export default class MoviesList extends Component {
                           <div className="fadeout"></div>
                           <div className="fadeoutText">
                             <h3>{movie.Title}</h3>{" "}
-                            <p className="imageDescription">${movie.Year}</p>
+                            <h6 className="imageDescription">{movie.Year}</h6>
                           </div>
                         </Col>
                       ))
