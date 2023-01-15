@@ -27,7 +27,7 @@ export default function Details() {
   async function fetchMovies(searchPar) {
     try {
       let response = await fetch(
-        `http://www.omdbapi.com/?i=${params.imdbID}&apikey=383cbcb8`
+        `https://www.omdbapi.com/?i=${params.imdbID}&apikey=383cbcb8`
       );
       if (response.ok) {
         let data = await response.json();
