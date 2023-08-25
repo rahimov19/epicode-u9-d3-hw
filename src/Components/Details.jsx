@@ -17,7 +17,6 @@ import { useNavigate, useParams } from "react-router-dom";
 
 export default function Details() {
   const params = useParams();
-  console.log(params);
 
   const [movie, setMovie] = useState(null);
   const [reviews, setReviews] = useState([]);
@@ -70,10 +69,9 @@ export default function Details() {
       );
       if (response.ok) {
         let data = await response.json();
-        console.log(data);
+
         setTimeout(() => {
           setMovie(data);
-          console.log(movie);
         }, 3000);
       } else {
         console.log("error");
@@ -88,7 +86,6 @@ export default function Details() {
       const response = await fetch(endpoint);
       const data = await response.json();
       setReviews(data);
-      console.log(reviews);
     } catch (error) {
       console.log(error);
     }

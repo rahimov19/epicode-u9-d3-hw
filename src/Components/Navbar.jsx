@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Nav, Button } from "react-bootstrap";
+import { Navbar, Nav, Button, NavDropdown } from "react-bootstrap";
 import logo from "./netflix_logo.png";
 import ava from "./avatar.png";
 import { Link, useLocation } from "react-router-dom";
@@ -9,24 +9,29 @@ export default function Navibar({ setSearchValue }) {
 
   return (
     <>
-      <Navbar expand="lg">
+      <Navbar expand="lg" className="navbarDiv">
         <div className="container-fluid">
           <Nav.Link className="navbar-brand" href="/">
             <img src={logo} id="logo" alt="logo" />
           </Nav.Link>
-          <Button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+          <NavDropdown
+            title="Menu"
+            id="basic-nav-dropdown"
+            className="d-lg-none d-sm-flex aDropdown"
           >
-            <span className="navbar-toggler-icon"></span>
-          </Button>
+            <Link className="navbar-link dropdown-item" to="/">
+              Home
+            </Link>
+            <Link className="navbar-link dropdown-item" to="/order">
+              Add a movie
+            </Link>{" "}
+            <Link className="navbar-link dropdown-item" to="/tv">
+              TV Shows
+            </Link>
+          </NavDropdown>
+
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 d-lg-flex d-none">
               <li className="nav-item">
                 <Link className="navbar-link" to="/">
                   Home
@@ -43,12 +48,13 @@ export default function Navibar({ setSearchValue }) {
                 </Link>
               </li>
             </ul>
+
             <div className="d-flex align-items-center">
               <input
+                className="navbarInput"
                 style={{
                   paddingLeft: "0.5em",
                   height: "2em",
-                  width: "15em",
                 }}
                 type="text"
                 id="searchInput"
@@ -73,10 +79,10 @@ export default function Navibar({ setSearchValue }) {
                 </Button>
               </Link>
             </div>
-            <ul className="navbar-nav">
+            <ul className="d-flex justify-content-around">
               <li className="nav-item">
                 <Nav.Link
-                  className="nav-link active"
+                  className="nav-link active d-none d-md-block"
                   aria-current="page"
                   href="index.html"
                 >
@@ -126,10 +132,7 @@ export default function Navibar({ setSearchValue }) {
                   </Button>
                   <ul className="dropdown-menu dropdown-menu-dark">
                     <li>
-                      <Nav.Link
-                        className="dropdown-item"
-                        href="http://ubeytdemir.me/netflix-ui/profile.html"
-                      >
+                      <Nav.Link className="dropdown-item">
                         <div className="d-flex align-items-center">
                           <img
                             src="./assets/avatar.png"

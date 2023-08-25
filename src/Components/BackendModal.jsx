@@ -28,7 +28,6 @@ export default function BackendModal2() {
       const endpoint = `${apiUrl}/movies`;
       const response = await fetch(endpoint, options);
       movieId = await response.json();
-      console.log(movieId);
     } catch (error) {
       console.log(error);
     }
@@ -42,14 +41,13 @@ export default function BackendModal2() {
     try {
       const endpoint = `${apiUrl}/files/${movieId.id}/cover`;
       const repsonse = await fetch(endpoint, imageOptions);
-      console.log(repsonse);
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <div id="orderComponent">
+    <div id="orderComponent" className="my-5 mx-3">
       <h1>Add new Movie</h1>
 
       <Container>

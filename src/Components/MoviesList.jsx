@@ -21,10 +21,9 @@ export default class MoviesList extends Component {
         const filteredData = data.filter(
           (movie) => movie.Type === this.props.par
         );
-        console.log(data);
+
         setTimeout(() => {
           this.setState({ fetchMovies: filteredData });
-          console.log(this.state);
         }, 1000);
       } else {
         console.log("error");
@@ -43,10 +42,17 @@ export default class MoviesList extends Component {
             <div className="carousel-inner">
               <Carousel.Item className="active">
                 <div className="movie-row">
-                  <Row className="row" id="first_row">
+                  <Row className="row rowMov" id="first_row">
                     {this.state.fetchMovies ? (
                       this.state.fetchMovies.slice(0, 6).map((movie) => (
-                        <Col md={2} key={movie.imdbID}>
+                        <Col
+                          xl={2}
+                          lg={2}
+                          md={3}
+                          sm={4}
+                          xs={12}
+                          key={movie.imdbID}
+                        >
                           <img
                             className="movie-cover"
                             src={movie.Poster}
@@ -85,7 +91,14 @@ export default class MoviesList extends Component {
                   <Row className="row" id="first_row2">
                     {this.state.fetchMovies ? (
                       this.state.fetchMovies.slice(6, 6).map((movie) => (
-                        <Col md={2} key={movie.imdbID}>
+                        <Col
+                          xl={2}
+                          lg={2}
+                          md={3}
+                          sm={4}
+                          xs={12}
+                          key={movie.imdbID}
+                        >
                           <img
                             className="movie-cover"
                             src={movie.Poster}

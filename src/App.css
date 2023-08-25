@@ -18,9 +18,26 @@ body {
 #orderComponent {
   color: aliceblue;
 }
+.searchH1 {
+  color: #f3f3f3;
+  text-align: center;
+  margin-top: 2em;
+}
 #orderComponent h1 {
-  margin-left: 9em;
-  margin-bottom: 1em;
+  text-align: center;
+  margin-top: 2em;
+}
+.aDropdown {
+  position: relative;
+}
+.dropdown-item:hover {
+  color: transparent;
+}
+.aDropdown div {
+  position: absolute;
+  top: 2.2em;
+  z-index: 999;
+  /* right: 0.5em; */
 }
 .navbar-link {
   margin-inline: 1em;
@@ -130,11 +147,14 @@ body {
   background-color: var(--home-bg-color);
 }
 #searchInput {
-  width: 30%;
+  width: 80%;
   height: 1.7em;
+  min-width: 5em;
+  max-width: 12em;
   border-radius: 20px;
   background-color: #f3f3f3;
   color: #000;
+  margin-inline: 1em;
 }
 .icon {
   margin: 4px 10px;
@@ -161,9 +181,24 @@ body {
 }
 .movie-cover {
   width: 99%;
+  object-fit: contain;
+  height: 16em;
   transition: 0.3s;
   opacity: 0.7;
+  margin-block: 1em;
 }
+.rowMov {
+  height: 18em;
+  overflow: hidden;
+}
+.navbarDiv {
+  background-color: #202020;
+  overflow: hidden;
+}
+.navbar a {
+  color: #c8c8c8 !important;
+}
+
 .movie-cover:hover {
   /* opacity: 1; */
   cursor: pointer;
@@ -253,18 +288,6 @@ input[type="checkbox"] {
   border-radius: 0 10px 0 10px;
 }
 
-/* html
-  body
-  div#root
-  div
-  div.container-fluid
-  div.movie-gallery.m-2
-  div.carousel.slide
-  div.carousel-inner
-  div.carousel-inner.active
-  div.active.carousel-item
-  div.movie-row
-  div#first_row.row */
 .spinner-border,
 .spinnerO {
   margin-inline: auto;
@@ -344,7 +367,7 @@ div.col-md-3:nth-child(1) > ul:nth-child(1) > li:nth-child(1) svg {
 }
 .navbar a {
   font-size: 1.2em;
-  color: rgba(139, 139, 139, 1) !important;
+  /* color: rgba(139, 139, 139, 1) !important; */
 }
 #buttondrop {
   background-color: transparent;

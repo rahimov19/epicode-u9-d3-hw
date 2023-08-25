@@ -5,7 +5,7 @@ export default class FooterBar extends Component {
   render() {
     return (
       <>
-        <Container fluid className="m-5 px-5">
+        <Container fluid className="text-center px-5">
           <div className="row">
             <div className="col-md-3">
               <ul className="navbar-nav">
